@@ -1,4 +1,5 @@
 const RecommendItem = ({ recommends }) => {
+  // console.log(recommends);
   const { name, image, recipe } = recommends;
   return (
     <div>
