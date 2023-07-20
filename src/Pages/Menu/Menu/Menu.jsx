@@ -9,7 +9,7 @@ import useMenu from "../../../hooks/useMenu";
 import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 import MenuCategory from "../MenuCategory/MenuCategory";
 
-const Menu = () => { 
+const Menu = () => {
   const [menu] = useMenu();
 
   const desserts = menu.filter((item) => item.category === "dessert");
@@ -37,26 +37,18 @@ const Menu = () => {
       {/* desert menu items */}
       <MenuCategory
         items={desserts}
-        title={"Desserts"}
+        title={"dessert"}
         img={dessertImg}
       ></MenuCategory>
 
       {/* pizza */}
-      <MenuCategory
-        items={pizza}
-        title={"Pizzas"}
-        img={pizzaImg}
-      ></MenuCategory>
+      <MenuCategory items={pizza} title={"pizza"} img={pizzaImg}></MenuCategory>
 
       {/* salads */}
-      <MenuCategory
-        items={salad}
-        title={"Salads"}
-        img={saladImg}
-      ></MenuCategory>
+      <MenuCategory items={salad} title={"salad"} img={saladImg}></MenuCategory>
 
       {/* soups */}
-      <MenuCategory items={soup} title={"Soups"} img={soupImg}></MenuCategory>
+      <MenuCategory items={soup} title={"soup"} img={soupImg}></MenuCategory>
     </div>
   );
 };
