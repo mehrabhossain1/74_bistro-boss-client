@@ -15,7 +15,7 @@ const PopularMenu = () => {
   }, []);
 
   return (
-    <section className="mb-12">
+    <section className='mb-12'>
       <SectionTitle
         heading='From Our Menu'
         subHeading='Popular Items'
@@ -26,6 +26,9 @@ const PopularMenu = () => {
           <MenuItem key={item._id} item={item}></MenuItem>
         ))}
       </div>
+      <button className='btn btn-outline border-0 border-b-4 mt-4 text-center '>
+        View Full Menu
+      </button>
     </section>
   );
 };
