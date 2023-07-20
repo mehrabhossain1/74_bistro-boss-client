@@ -9,7 +9,7 @@ import useMenu from "../../../hooks/useMenu";
 import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 import MenuCategory from "../MenuCategory/MenuCategory";
 
-const Menu = () => {
+const Menu = () => { 
   const [menu] = useMenu();
 
   const desserts = menu.filter((item) => item.category === "dessert");
