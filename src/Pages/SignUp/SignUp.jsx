@@ -1,4 +1,19 @@
+import { useForm } from "react-hook-form";
+
 const SignUp = () => {
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = (data) => {
+    console.log(data);
+  };
+
+  console.log(watch("example"));
+
   return (
     <>
       <div className='hero min-h-screen bg-base-200'>
@@ -12,13 +27,16 @@ const SignUp = () => {
             </p>
           </div>
           <div className='card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100'>
-            <div className='card-body'>
+            {/* form */}
+
+            <form onSubmit={handleSubmit(onSubmit)} className='card-body'>
               <div className='form-control'>
                 <label className='label'>
                   <span className='label-text'>Name</span>
                 </label>
                 <input
                   type='text'
+                  {...register("name")}
                   name='name'
                   placeholder='name'
                   className='input input-bordered'
@@ -30,6 +48,7 @@ const SignUp = () => {
                 </label>
                 <input
                   type='email'
+                  {...register("email")}
                   name='email'
                   placeholder='email'
                   className='input input-bordered'
@@ -41,6 +60,7 @@ const SignUp = () => {
                 </label>
                 <input
                   type='password'
+                  {...register("password")}
                   name='password'
                   placeholder='password'
                   className='input input-bordered'
@@ -54,7 +74,7 @@ const SignUp = () => {
               <div className='form-control mt-6'>
                 <button className='btn btn-primary'>Sign Up</button>
               </div>
-            </div>
+            </form>
           </div>
         </div>
       </div>
