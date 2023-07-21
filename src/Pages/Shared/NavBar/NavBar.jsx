@@ -22,12 +22,17 @@ const NavBar = () => {
       <li>
         <Link to='/order/salad'>Order Food</Link>
       </li>
+      <li>
+        <Link to='/secret'>Secret</Link>
+      </li>
 
       {user ? (
         <>
-          <button onClick={handleLogout} className='btn btn-ghost'>
-            Logout
-          </button>
+          <li>
+            <button onClick={handleLogout} className='btn btn-ghost'>
+              Logout
+            </button>
+          </li>
         </>
       ) : (
         <>
