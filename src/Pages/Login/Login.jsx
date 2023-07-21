@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   loadCaptchaEnginge,
   LoadCanvasTemplate,
@@ -8,6 +8,8 @@ import {
 
 const Login = () => {
   const captchaRef = useRef(null);
+  const [disabled, setDisabled] = useState(true);
+
   useEffect(() => {
     loadCaptchaEnginge(6);
   }, []);
@@ -21,8 +23,12 @@ const Login = () => {
   };
 
   const handleValidateCaptcha = () => {
-    const value = captchaRef.current.value;
-    console.log(value);
+    const user_captcha_value = captchaRef.current.value;
+    if (validateCaptcha(user_captcha_value)) {
+      setDisabled(false);
+    } else {
+      setDisabled(true);
+    }
   };
 
   return (
@@ -85,7 +91,12 @@ const Login = () => {
               </button>
             </div>
             <div className='form-control mt-6'>
-              <input className='btn btn-primary' type='submit' value='Login' />
+              <input
+                disabled={disabled}
+                className='btn btn-primary'
+                type='submit'
+                value='Login'
+              />
             </div>
           </form>
         </div>
