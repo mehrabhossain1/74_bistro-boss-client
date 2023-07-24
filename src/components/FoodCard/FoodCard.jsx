@@ -1,5 +1,6 @@
 const FoodCard = ({ item }) => {
   const { name, image, price, recipe } = item;
+
   const handleAddToCart = (item) => {
     console.log(item);
   };
