@@ -1,12 +1,16 @@
 import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 import { useForm } from "react-hook-form";
 
+const img_hosting_token = import.meta.env.VITE_Image_Upload_Token;
+
 const AddItem = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
+
+  const img_hosting_url = `https://api.imgbb.com/1/upload?expiration=600&key=${img_hosting_token}`;
 
   const onSubmit = (data) => {
     console.log(data);
@@ -39,12 +43,11 @@ const AddItem = () => {
               <span className='label-text font-semibold'>Category*</span>
             </label>
             <select
+              defaultValue='Pick One'
               {...register("category", { required: true })}
               className='select select-bordered'
             >
-              <option disabled selected>
-                Pick one
-              </option>
+              <option disabled>Pick One</option>
               <option>Pizza</option>
               <option>Soup</option>
               <option>Salad</option>
