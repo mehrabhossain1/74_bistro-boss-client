@@ -20,9 +20,12 @@ const MyCart = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/carts/${item._id}`, {
-          method: "DELETE",
-        })
+        fetch(
+          `https://bistro-boss-server-production.up.railway.app/carts/${item._id}`,
+          {
+            method: "DELETE",
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
             if (data.deletedCount > 0) {
@@ -42,7 +45,7 @@ const MyCart = () => {
       <div className='uppercase h-[60px] font-semibold flex justify-evenly items-center'>
         <h3 className='text-3xl'>Total Items: {cart.length}</h3>
         <h3 className='text-3xl'>Total Price: ${total}</h3>
-        <Link to="/dashboard/payment">
+        <Link to='/dashboard/payment'>
           <button className='btn btn-warning btn-sm'>PAY</button>
         </Link>
       </div>

@@ -22,7 +22,7 @@ export default useCart;
 
 // queryFn: async () => {
 //   const res = await fetch(
-//     `http://localhost:5000/carts?email=${user?.email}`,
+//     `https://bistro-boss-server-production.up.railway.app/carts?email=${user?.email}`,
 //     {
 //       headers: {
 //         authorization: `bearer ${token}`,
