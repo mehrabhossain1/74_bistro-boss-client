@@ -22,7 +22,7 @@ const Dashboard = () => {
     <div className='drawer lg:drawer-open '>
       <input id='my-drawer-2' type='checkbox' className='drawer-toggle' />
       <div className='drawer-content '>
-      <label
+        <label
           htmlFor='my-drawer-2'
           className='btn btn-primary drawer-button lg:hidden'
         >
@@ -30,7 +30,6 @@ const Dashboard = () => {
         </label>
         {/* Page content here */}
         <Outlet></Outlet>
-        
       </div>
       <div className='drawer-side '>
         <label htmlFor='my-drawer-2' className='drawer-overlay'></label>
@@ -38,7 +37,7 @@ const Dashboard = () => {
           {isAdmin ? (
             <>
               <li>
-                <NavLink to='/dashboard/home'>
+                <NavLink to='/dashboard/adminhome'>
                   <FaHome />
                   Admin Home
                 </NavLink>
@@ -71,7 +70,7 @@ const Dashboard = () => {
           ) : (
             <>
               <li>
-                <NavLink to='/dashboard/home'>
+                <NavLink to='/dashboard/userhome'>
                   <FaHome />
                   User Home
                 </NavLink>
